@@ -1,17 +1,17 @@
 Project HOUSTON
 
-Install
+Install:
 $ git clone https://github.com/lubomirKavetskiy/Houston.git
 $ cd Houston
 $ npm install
 
-Start & watch
+Start & watch:
 $ npm start
 
-Simple build for production
+Simple build for production:
 $ npm run build
 
-Languages & tools
+Languages & tools:
 JavaScript ES5
 React
 Redux
