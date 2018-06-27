@@ -1,4 +1,4 @@
-Project HOUSTON
+## Project Houston
 
 Install dependencies:
 ```
