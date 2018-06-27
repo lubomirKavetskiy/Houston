@@ -1,40 +1,21 @@
 import React, { Fragment } from 'react';
-import { Route, Link, Redirect, Switch } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 
-import './index.css';
-import Training from '../../components/Training';
-import Testing from '../../components/Testing';
-import MyVocabulary from '../../components/MyVocabulary';
-import Autorisation from '../../components/Autorisation';
+import { TRAINING_ROUTE, routesConfig } from '../../components/Navigation/routes';
+import Navigation from '../../components/Navigation';
 
 const App = () => (
   <Fragment>
     <header>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Training</Link>
-          </li>
-          <li>
-            <Link to="/autorisation">Autorisation</Link>
-          </li>
-          <li>
-            <Link to="/testing">Testing</Link>
-          </li>
-          <li>
-            <Link to="/my-vocabulary">My vocabulary</Link>
-          </li>
-        </ul>
-      </nav>
+      <Navigation />
     </header>
 
     <main>
       <Switch>
-        <Route exact path="/" component={Training} />
-        <Route exact path="/autorisation" component={Autorisation} />
-        <Route exact path="/testing" component={Testing} />
-        <Route exact path="/my-vocabulary" component={MyVocabulary} />
-        <Redirect to="/" />
+        {routesConfig.map(({ route, component }) => (
+          <Route exact path={route} component={component} />
+        ))}
+        <Redirect to={TRAINING_ROUTE} />
       </Switch>
     </main>
   </Fragment>
