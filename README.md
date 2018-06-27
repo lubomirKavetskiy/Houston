@@ -1,5 +1,7 @@
 ## Project Houston
 
+### Setup
+
 Install dependencies:
 ```
 npm install
@@ -12,7 +14,7 @@ Build for production:
 ```
 npm run build
 ```
-Languages & tools:
+### Languages & tools:
 * ES2015+
 * React
 * Redux
