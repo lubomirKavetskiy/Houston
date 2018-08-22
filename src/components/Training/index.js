@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Training = () => <section>Training page</section>;
+import './index.css';
+
+const Training = () => <section className="trainining-page">Training page</section>;
 
 export default Training;

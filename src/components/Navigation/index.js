@@ -1,17 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import { MenuList, MenuItem } from '@material-ui/core';
+
 import { routesConfig } from './routes';
 
-const Navigation = () => (
-  <nav>
-    <ul>
-      {routesConfig.map(({ route, title }) => (
-        <li key={route}>
-          <Link to={route}>{title}</Link>
-        </li>
-      ))}
-    </ul>
-  </nav>
+const Navigation = ({ location: { pathname } }) => (
+  <MenuList>
+    {routesConfig.map(({ route, title }) => (
+      <MenuItem
+        key={route}
+        component={Link}
+        to={route}
+        selected={route === pathname}
+      >
+        {/* <Link to={route}>{title}</Link> */}
+        {title}
+      </MenuItem>
+    ))}
+  </MenuList>
 );
 
-export default Navigation;
+//export default Navigation;
+export default withRouter(Navigation);
