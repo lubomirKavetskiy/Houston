@@ -20,5 +20,4 @@ const Navigation = ({ location: { pathname } }) => (
   </MenuList>
 );
 
-//export default Navigation;
 export default withRouter(Navigation);
